@@ -14,30 +14,16 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    //lateinit var dice_image: ImageView
+    private var myName:MyName = MyName("ankit it is")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
-       // val rollbutton: Button = findViewById(R.id.roll_button)
-
-
         binding.rollButton.setOnClickListener{
             rolldice()
         }
-
-
-
-//        rollbutton.setOnClickListener {
-//               rolldice()
-//        }
-
-
-        //dice_image = findViewById(R.id.dice_image)
-
-
+        binding.myName = myName
     }
 
     private fun rolldice() {
